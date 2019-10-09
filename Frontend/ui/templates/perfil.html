@@ -1,0 +1,19 @@
+{%include 'base.html'%}
+{%block contenido%}
+<div class="row justify-content-md-center">
+	<div class="col-md-8">
+		<h1>Posts</h1>
+	</div>
+	{%for t in tweets%}
+	<div class="col-md-8">
+		<div class="card mt-3 shadow-lg bg-white rounded">
+		    <div class="card-body">
+		      <h4 class="card-title">{{ t.usuario }}</h4>
+		      <p class="card-text text-ligth ">{{ t.contenido }}</p>
+		      <span class="small">{{t.fecha}}</span>
+		    </div>
+		</div>
+	</div>
+	{%endfor%}
+</div>
+{%endblock%}
