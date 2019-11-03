@@ -5,4 +5,5 @@ from usuarios.models import Usuario
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ('username','nombre','correo', )
+        extra_kwargs = {'password': {'write_only': True}}
+        fields = ('username','nombre','correo','password' )

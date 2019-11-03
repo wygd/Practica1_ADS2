@@ -5,11 +5,11 @@ from tweets.models import Tweet
 from tweets.serializers import TweetSerializer
 
 class TweetListCreateView(generics.ListCreateAPIView):
-    queryset = Tweet.objects.all().order_by('-fecha')
+    queryset = Tweet.objects.all()
     serializer_class = TweetSerializer
 
     def get_queryset(self):
-        queryset = Tweet.objects.all()
+        queryset = Tweet.objects.all().order_by('-fecha')
         username = self.request.query_params.get('username')
         #try:
         #	usuario = Usuario.objects.get(username=username)
